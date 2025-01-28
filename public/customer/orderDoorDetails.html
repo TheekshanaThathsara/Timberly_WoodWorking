@@ -84,7 +84,7 @@
                         <p>Total: </p>
                         <p>Paid: </p>
                         <p>Balance: Rs.</p>
-                        <button class="button outline" onclick="window.location.href=`http://localhost/Timberly/public/customer/payment-details.html`">Pay</button>
+                        <button id="pay" class="button outline" onclick="window.location.href=`http://localhost/Timberly/public/customer/payment-details.html`" disabled>Pay</button>
                     </div>
                     <div class="card">
                         <h4>Measurement Person</h4>
@@ -111,6 +111,30 @@
                         <h2>Order Details</h2>
                         <p>No. of Items: </p>
                     </div>
+
+                    <div class="filter-container">
+                        <div class="filter">
+                            <label for="order-status">Item Status:</label>
+                            <select id="order-status" class="filter-select">
+                                <option value="">All</option>
+                                <option value="Completed">Completed</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Pending">Pending</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter">
+                            <label for="payment-status">Description</label>
+                            <select id="payment-status" class="filter-select">
+                                <option value="">All</option>
+                                <option value="Paid">Paid</option>
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Refunded">Refunded</option>
+                            </select>
+                        </div>                    
+                        <button class="button filter-btn">Filter</button>
+                        <button id="addItem" style="margin-left: auto; padding: 8px;" class="button outline" onclick="showPopup()">Add Items</button>
+                    </div>
     
                     <!-- Scrollable table section -->
                     <div class="table-container">
@@ -119,68 +143,56 @@
                                 <tr>
                                     <th>Item</th>
                                     <th>Description</th>
-                                    <th>Length(m)</th>
-                                    <th>width(mm)</th>
-                                    <th>thickness(mm)</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                               
                                 <tr>
                                     <td>#101</td>
                                     <td>Mahogany Door</td>
                                     <td>2</td>
-                                    <td>21</td>
-                                    <td>210</td>
-                                    <td>2</td>
                                     <td>Rs. 15000</td>
+                                    <td>Pending</td>
                                     <td>
-                                        <span ><i class="fa-solid fa-eye"></i></span>
-                                        <span ><i class="fa-solid fa-pen"></i></span>
-                                        <span ><i class="fa-solid fa-trash"></i></span>
+                                        <button class="button outline" style="margin-right: 10px; padding: 10px; border-radius: 10px;" onclick="window.location.href=`http://localhost/Timberly/public/customer/trackOrderDoor.html`">View</button>
+                                       <button class="button solid" style=" padding: 10px; border-radius: 10px;">Delete</button>
+                                    
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>#101</td>
                                     <td>Mahogany Door</td>
                                     <td>2</td>
-                                    <td>21</td>
-                                    <td>210</td>
-                                    <td>2</td>
                                     <td>Rs. 15000</td>
+                                    <td>Pending</td>
                                     <td>
-                                        <span ><i class="fa-solid fa-eye"></i></span>
-                                        <span ><i class="fa-solid fa-pen"></i></span>
-                                        <span ><i class="fa-solid fa-trash"></i></span>
+                                        <button class="button outline" style="margin-right: 10px; padding: 10px; border-radius: 10px;" onclick="window.location.href=`http://localhost/Timberly/public/customer/trackOrderDoor.html`">View</button>
+                                       <button class="button solid" style=" padding: 10px; border-radius: 10px;">Delete</button>
+                                    
                                     </td>
                                 </tr>
-                                
-                                
-                                
-                                
+                                <tr>
+                                    <td>#101</td>
+                                    <td>Mahogany Door</td>
+                                    <td>2</td>
+                                    <td>Rs. 15000</td>
+                                    <td>Pending</td>
+                                    <td>
+                                        <button class="button outline" style="margin-right: 10px; padding: 10px; border-radius: 10px;" onclick="window.location.href=`http://localhost/Timberly/public/customer/trackOrderDoor.html`">View</button>
+                                       <button class="button solid" style=" padding: 10px; border-radius: 10px;">Delete</button>
+                                    
+                                    </td>
+                                </tr>   
                             </tbody>
                         </table>
-                    </div>
-    
-                    <!-- Footer button -->
-                    <div class="footer-button">
-                        <button id="add-button" class="button outline" >Add</button>
-                        <button id="update-button" class="button solid">Update</button>
-                    </div>
-    
+                    </div>    
                 </div>
-
             </div>
-
-           
-    
         </div>
-
-        
-        
-   
     </div>
 
     <div id="overlay" class="overlay" onclick="closePopup()"></div>

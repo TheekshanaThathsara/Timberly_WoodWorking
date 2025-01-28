@@ -84,6 +84,8 @@
                                     <option value="Jak">Jak</option>
                                     <option value="Mahogany">Mahogany</option>
                                     <option value="Teak">Teak</option>
+                                    <option value="Teak">Sooriyamaara</option>
+                                    <option value="Teak">Nedum</option>
                                 </select>
                             </div>
                             
@@ -129,7 +131,7 @@
                     <div class="right-top">
                         <div class="heading">
                             <h2>Order </h2>
-                            <h4>No.of Items : </h4>
+                            <h4 >No.of Items : <span id="noOfItem"></span></h4>
                         </div>
                         <div class="order-list">
                             
@@ -140,8 +142,8 @@
                     <div class="order-summary">
                         <h3>Order Summary</h3>
                         <hr>
-                        <p>No.of items: </p>
-                        <p>Total: <span class="total-amount">Rs. </span></p>
+                        <p>No.of items: <span class="total-amount" id="noOfItems"> </span></p>
+                        <p>Total: <span class="total-amount" id="total">Rs. </span></p>
                     </div>
 
                     <button class="button outline" onclick=placeOrder() >Checkout Order</button>   
