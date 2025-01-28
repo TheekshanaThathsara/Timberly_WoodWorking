@@ -75,7 +75,7 @@ body, html {
     color: #fff;
     padding: 12px;
     text-align: left;
-    border: 1px solid var(--color-secondary);
+    /* border: 1px solid var(--color-secondary); */
 }
 
 .styled-table tbody tr:nth-child(even) {
@@ -89,7 +89,7 @@ body, html {
 .styled-table tbody td {
     padding: 10px;
     color: #333;
-    border: 1px solid var(--color-secondary);
+    /* border: 1px solid var(--color-secondary); */
 }
 
 .styled-table tbody tr:hover {
@@ -98,12 +98,65 @@ body, html {
     transition: background-color 0.3s;
 }
 
+/* Filter Bar Styling */
+.filter-container {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    /* background-color: #f9f9f9; */
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    height: fit-content;
 
+}
+
+.filter-container label {
+    font-size: 14px;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-1);
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 180px;
+}
+
+.filter-select:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0px 0px 4px var(--color-secondary);
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border-radius: var(--border-radius-2);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-secondary);
+}
 
 
 .dashboard-container {
     display: flex;
-    min-height: 100vh;
+    max-height: 100vh;
 }
 
 .dashboard-container .main-content {
@@ -197,9 +250,10 @@ body, html {
     p {
         font-size: 14px;
         color: #666;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
         padding: 0%;
         margin-top: 0;
+        font-weight: 600;
 
     }
 
@@ -237,8 +291,8 @@ body, html {
 
 .dashboard-container .main-content .content .bottom .table-container {
     flex: 1; 
-    overflow-y: auto; 
-    max-height: 250px; 
+    /* overflow-y: auto;  */
+    /* max-height: 250px;  */
     /* border: 1px solid #ccc; */
     border-radius: 5px;
 
@@ -296,6 +350,7 @@ body, html {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 11;
     display: none; /* hidden by default */
+    width: 50%;
   }
 
   .popup .form-content {
@@ -308,7 +363,7 @@ body, html {
     margin: 10px ;
     height: 100%;
     overflow-y: auto;
-
+    
     h4{
         text-align: left;
         font-family: 'Arial', sans-serif;
@@ -370,7 +425,7 @@ body, html {
         outline: none;
         background-color: #fff;
         transition: border 0.3s;
-        width: 30%;
+        width: 60%;
         height: 30px;
         border: 1px solid var(--color-primary);
 

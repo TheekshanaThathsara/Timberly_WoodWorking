@@ -2,47 +2,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     const buttonElement = document.getElementById('action-button');
     const statusElement = document.getElementById('status');
-    const buttonAddElement = document.getElementById('add-button');
-    const buttonUpdateElement = document.getElementById('update-button');
-    const popupMessage = document.getElementById('popup-message');
-    const overlay = document.getElementById('popup-overlay');
-    const closePopupButton = document.getElementById('close-popup');
+    const buttonAddItem = document.getElementById('addItem');
+    const buttonPay = document.getElementById('pay'); 
 
    
     function updateButton() {
         if (statusElement.textContent === 'Confirmed') {
+            buttonPay.disabled = false;
             buttonElement.style.display = 'none';
-            
-
-            buttonAddElement.style.display = 'none';
-            buttonUpdateElement.textContent = 'Proceed to Pay';
-            buttonUpdateElement.onclick = function() {
-                window.location.href = "http://localhost/Timberly/public/customer/payment-details.html";
-                // statusElement.textContent = 'Processing';
-                // updateButton();
-            };
-            
+            buttonAddItem.disabled = true;
 
         } else if (statusElement.textContent === 'Processing') {
-            buttonElement.textContent = 'Track';
-            buttonElement.style.display = 'inline-block';
-            buttonElement.onclick = function() {
-                window.location.href = "http://localhost/Timberly/public/customer/trackOrder.html";
-            };
-
-            buttonUpdateElement.style.display = 'none';
-            buttonAddElement.style.display = 'none';
+            buttonElement.style.display = 'none';
+            buttonAddItem.disabled = true;
 
         } else {
+            buttonPay.disabled = false;
             buttonElement.textContent = 'Cancel Order';
             buttonElement.onclick = function() {
                 alert("Order Cancelled")
             };
-
-            buttonAddElement.onclick = function(){
-                showPopup();
-            }
+  
         }
+    }
+
+    buttonAddItem.onclick = function(){
+        showPopup();
     }
 
     function showPopup() {
@@ -91,11 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
                 reader.readAsDataURL(file);  // Read the file as a data URL (base64)
             }
-        });
-
-
-
-        
+        });        
       } 
     
     updateButton();
