@@ -83,7 +83,7 @@
                         <p>Total: </p>
                         <p>Paid: </p>
                         <p>Balance: </p>
-                        <button class="button outline" onclick="window.location.href=`http://localhost/Timberly/public/customer/payment-details.html`">Pay</button>
+                        <button id="pay" class="button outline" onclick="window.location.href=`http://localhost/Timberly/public/customer/payment-details.html`">Pay</button>
                     </div>
                     <div class="card">
                         <h4>Measurement Person</h4>
@@ -109,6 +109,30 @@
                         <h2>Order Details</h2>
                         <p>No. of Items: </p>
                     </div>
+
+                    <div class="filter-container">
+                        <div class="filter">
+                            <label for="order-status">Item Status:</label>
+                            <select id="order-status" class="filter-select">
+                                <option value="">All</option>
+                                <option value="Completed">Completed</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Pending">Pending</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter">
+                            <label for="payment-status">Description</label>
+                            <select id="payment-status" class="filter-select">
+                                <option value="">All</option>
+                                <option value="Paid">Paid</option>
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Refunded">Refunded</option>
+                            </select>
+                        </div>                    
+                        <button class="button filter-btn">Filter</button>
+                        <button id="addItem" style="margin-left: auto; padding: 8px;" class="button outline" onclick="showPopup()">Add Items</button>
+                    </div>
     
                     <div class="table-container">
                         <table class="styled-table">
@@ -119,6 +143,7 @@
                                     <th>Size</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -129,10 +154,11 @@
                                     <td>Medium</td>
                                     <td>2</td>
                                     <td>Rs. 2300</td>
+                                    <td>Accepted</td>
                                     <td>
-                                        <span ><i class="fa-solid fa-eye"></i></span>
-                                        <span ><i class="fa-solid fa-pen"></i></span>
-                                        <span ><i class="fa-solid fa-trash"></i></span>
+                                        <button class="button outline" style="margin-right: 10px; padding: 10px; border-radius: 10px;" onclick="window.location.href=`http://localhost/Timberly/public/customer/trackOrderFurniture.html`">View</button>
+                                       <button class="button solid" style=" padding: 10px; border-radius: 10px;">Delete</button>
+                                    
                                     </td>
                                 </tr>
                                 <tr>
@@ -141,10 +167,11 @@
                                     <td>Medium</td>
                                     <td>2</td>
                                     <td>Rs. 2300</td>
+                                    <td>Accepted</td>
                                     <td>
-                                        <span ><i class="fa-solid fa-eye"></i></span>
-                                        <span ><i class="fa-solid fa-pen"></i></span>
-                                        <span ><i class="fa-solid fa-trash"></i></span>
+                                        <button class="button outline" style="margin-right: 10px; padding: 10px; border-radius: 10px;" onclick="window.location.href=`http://localhost/Timberly/public/customer/trackOrderFurniture.html`">View</button>
+                                       <button class="button solid" style=" padding: 10px; border-radius: 10px;">Delete</button>
+                                    
                                     </td>
                                 </tr>
                                 <tr>
@@ -153,29 +180,21 @@
                                     <td>Medium</td>
                                     <td>2</td>
                                     <td>Rs. 2300</td>
+                                    <td>Accepted</td>
                                     <td>
-                                        <span ><i class="fa-solid fa-eye"></i></span>
-                                        <span ><i class="fa-solid fa-pen"></i></span>
-                                        <span ><i class="fa-solid fa-trash"></i></span>
+                                        <button class="button outline" style="margin-right: 10px; padding: 10px; border-radius: 10px;" onclick="window.location.href=`http://localhost/Timberly/public/customer/trackOrderFurniture.html`">View</button>
+                                       <button class="button solid" style=" padding: 10px; border-radius: 10px;">Delete</button>
+                                    
                                     </td>
                                 </tr>
                                 
                                 
                             </tbody>
                         </table>
-                    </div>
-    
-                    <!-- Footer button -->
-                    <div class="footer-button">
-                        <button id="add-button" class="button outline">Add</button>
-                        <button id="update-button" class="button solid">Update</button>
-                    </div>
-    
+                    </div>    
                 </div>
-
             </div>
         </div>
-   
     </div>
 
     <div id="overlay" class="overlay" onclick="closePopup()"></div>
@@ -203,11 +222,7 @@
                             <div class="dropdown-menu">
                                 <img class="design-option" src="../images/chair.jpg" alt="Design 1" width="100">
                                 <img class="design-option" src="../images/table.jpg" alt="Design 2" width="100">
-                                <!-- <img class="design-option" src="/images/design3.jpg" alt="Design 3" width="100">
-                                <img class="design-option" src="/images/design4.jpg" alt="Design 1" width="100">
-                                <img class="design-option" src="/images/design5.jpg" alt="Design 2" width="100">
-                                <img class="design-option" src="/images/design6.jpg" alt="Design 3" width="100"> -->
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>                   
