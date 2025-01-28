@@ -29,7 +29,7 @@ try {
 
     // Fetch the order details for the latest order ID
     $detailsStmt = $conn->prepare("
-        SELECT ol.orderId, ol.itemId, ol.qty, l.type, l.length, l.width, l.thickness, l.unitPrice
+        SELECT ol.orderId, ol.itemId, ol.qty, ol.status, l.type, l.length, l.width, l.thickness, l.unitPrice
         FROM orderLumber ol
         JOIN lumber l ON ol.itemId = l.lumberId
         WHERE ol.orderId = :orderId
