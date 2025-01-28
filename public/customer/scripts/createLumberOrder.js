@@ -120,7 +120,8 @@ async function updateQty() {
     }
 }
 
-let cardIdCounter = 0; // To generate unique IDs for each card
+let cardIdCounter = 0; 
+let total = 0;
 
 async function addCard() {
     const type = document.getElementById("type").value;
@@ -145,6 +146,7 @@ async function addCard() {
             const cardGrid = document.querySelector(".order-list");
             const card = document.createElement("div");
             card.classList.add("product");
+            cardIdCounter = cardIdCounter + 1;
 
             // Generate content for the card
             card.innerHTML = `
@@ -152,15 +154,11 @@ async function addCard() {
                 <p><strong>Quantity:</strong> <span id="itemQty"> ${qty}</span></p>
                 <p><strong>Unit Price:</strong><span id="itemPrice">${data.price}</span></p>
             `;
-
-            // Add delete button for the card
-            // const deleteBtn = document.createElement("button");
-            // deleteBtn.textContent = "Remove";
-            // deleteBtn.onclick = () => card.remove();
-            // card.appendChild(deleteBtn);
-
-            // Add the card to the grid
             cardGrid.appendChild(card);
+            total = total + qty * data.price;
+            document.getElementById("noOfItem").textContent = `${cardIdCounter}`;
+            document.getElementById("noOfItems").textContent = `${cardIdCounter}`;
+            document.getElementById("total").textContent = `Rs. ${total}`;
         } else {
             alert("Item details not available.");
         }
